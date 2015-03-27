@@ -5,7 +5,7 @@ void ofApp::setup(){
     //just set up the openFrameworks stuff
     ofSetFrameRate(60);
     ofSetVerticalSync(true);
-    ofBackground(255);
+    ofBackground(0);
     
     int num = 1500;
     p.assign(num, expParticle());
@@ -41,6 +41,7 @@ void ofApp::draw(){
         p[i].draw();
     }
 
+    ofSetColor(220, 220, 220,20);
 
     ofCircle(ofGetMouseX(), ofGetMouseY(), 40);
     

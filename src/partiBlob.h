@@ -21,9 +21,9 @@ public:
     void update();
     void draw();
     
-    ofPoint pos;
-    ofPoint vel;
-    ofPoint frc;
+    ofVec2f pos;
+    ofVec2f vel;
+    ofVec2f frc;
     ofVec2f dir;
     ofVec2f initPos;
     
@@ -34,6 +34,9 @@ public:
     float scale;
     
     bool alive;
+    
+    ofColor colors[3];
+    int rndclr;
 };
 
 #endif /* defined(__firstPebble__partiBlob__) */

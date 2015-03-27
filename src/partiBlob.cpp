@@ -42,6 +42,13 @@ void expParticle::reset(int partX, int partY){
     scale = ofRandom(0.5, 1.0);
 
     alive = true;
+    
+    colors[0] = ofColor(200,250,40,20);
+    colors[1] = ofColor(20,130,250,20);
+    colors[2] = ofColor(250,30,140,20);
+    colors[3] = ofColor(190,130,40,20);
+    
+    rndclr = ofRandom(0, 3);
 
 }
 
@@ -68,8 +75,14 @@ void expParticle::update(){
     }
     
 
+    ofVec2f limit = ofVec2f(ofGetWidth()/2, ofGetHeight()/2);
+    
     
     if(pos.x < (ofGetWidth()/2 -200) || pos.x > (ofGetWidth()/2 +200)) {
+        alive = false;
+    }
+    
+    if(pos.y < (ofGetHeight()/2 -200) || pos.y > (ofGetHeight()/2 +200)) {
         alive = false;
     }
     
@@ -78,7 +91,7 @@ void expParticle::update(){
 //------------------------------------------------------------------
 void expParticle::draw(){
     
-    ofSetColor(20, 40, 40, 20);
+    ofSetColor(colors[rndclr]);
     ofCircle(pos.x, pos.y, 20 * scale);
     
 }
