@@ -43,10 +43,15 @@ void expParticle::reset(int partX, int partY){
 
     alive = true;
     
-    colors[0] = ofColor(200,250,40,20);
-    colors[1] = ofColor(20,130,250,20);
-    colors[2] = ofColor(250,30,140,20);
-    colors[3] = ofColor(190,130,40,20);
+    colors[0] = ofColor(147,196,198,120);
+    colors[1] = ofColor(45,185,221,120);
+    colors[2] = ofColor(0,150,220,120);
+    colors[3] = ofColor(250,0,0,100);
+    
+//    colors[0] = ofColor(200,250,40,120);
+//    colors[1] = ofColor(20,130,250,120);
+//    colors[2] = ofColor(250,30,140,120);
+//    colors[3] = ofColor(190,130,40,120);
     
     rndclr = ofRandom(0, 3);
 
@@ -78,11 +83,19 @@ void expParticle::update(){
     ofVec2f limit = ofVec2f(ofGetWidth()/2, ofGetHeight()/2);
     
     
-    if(pos.x < (ofGetWidth()/2 -200) || pos.x > (ofGetWidth()/2 +200)) {
+//    if(pos.x < (ofGetWidth()/2 -200) || pos.x > (ofGetWidth()/2 +200)) {
+//        alive = false;
+//    }
+//    
+//    if(pos.y < (ofGetHeight()/2 -200) || pos.y > (ofGetHeight()/2 +200)) {
+//        alive = false;
+//    }
+    
+    if(pos.x < 0 || pos.x > ofGetWidth()) {
         alive = false;
     }
     
-    if(pos.y < (ofGetHeight()/2 -200) || pos.y > (ofGetHeight()/2 +200)) {
+    if(pos.y < 0 || pos.y > ofGetHeight()) {
         alive = false;
     }
     
